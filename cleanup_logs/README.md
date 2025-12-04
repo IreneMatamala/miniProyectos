@@ -25,7 +25,7 @@ El archivo `config.yaml` permite definir:
 3. Ejecuta: `python cleanup_logs.py`
 
 ## Programar ejecución periódica
-Puedes añadir una entrada en crontab para ejecutar el script diariamente:
+Se puede añadir una entrada en crontab para ejecutar el script diariamente:
 
 `0 2 * * * /usr/bin/python3 /ruta/al/script/cleanup_logs.py`
 
