@@ -7,13 +7,13 @@ Este proyecto contiene un Jenkinsfile que define un pipeline para construir, pro
 - **Build**: Construye la imagen Docker de la aplicación.
 - **Test**: Ejecuta tests unitarios.
 - **Security Scan**: Escanea la imagen Docker con Trivy.
-- **Deploy**: Despliega la aplicación en Kubernetes (usando kubectl).
+- **Deploy**: Despliega la aplicación en Kubernetes 
 - **Rollback**: Opción para revertir el despliegue en caso de fallo.
 
 ## Requisitos
 - Jenkins con plugins de Docker, Kubernetes y Pipeline.
 - Un clúster de Kubernetes accesible desde Jenkins.
-- Docker Registry (puede ser Docker Hub o un registro privado).
+- Docker Registry 
 
 ## Configuración en Jenkins
 1. Crear un pipeline job y apuntar al repositorio que contiene este Jenkinsfile.
@@ -27,5 +27,4 @@ El pipeline se ejecuta automáticamente al hacer push a la rama main, pero tambi
 
 ## Mejoras futuras
 - Añadir etapa de pruebas de integración.
-- Implementar canary deployments.
-- Añadir notificaciones a Slack o email.
+
