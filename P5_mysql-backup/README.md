@@ -24,7 +24,6 @@ Copiar `config.conf.example` a `config.conf` y ajustar las variables:
 
 ## Programar con cron
 Para ejecutar diariamente a las 3 AM:
-
 `0 3 * * * /ruta/a/mysql-backup/backup.sh`
 
 ## Restauración
