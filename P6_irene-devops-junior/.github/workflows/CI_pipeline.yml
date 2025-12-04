@@ -1,0 +1,61 @@
+name: CI Pipeline for Junior DevOps
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        cd app
+        pip install -r requirements.txt
+    
+    - name: Run tests
+      run: |
+        echo "Running simple test..."
+        cd app
+        python -c "import app; print('App module loaded successfully')"
+    
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker image
+      run: |
+        cd app
+        docker build -t myapp:${{ github.sha }} .
+    
+    - name: Security scan with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'myapp:${{ github.sha }}'
+        format: 'table'
+        exit-code: '1'
+        ignore-unfixed: true
+        severity: 'CRITICAL,HIGH'
+    
+  deploy-staging:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy to staging
+      run: |
+        echo "Simulating deployment..."
+        echo "In a real scenario, this would:"
+        echo "1. Push to Docker Hub"
+        echo "2. Update Kubernetes manifests"
+        echo "3. Trigger rollout"
