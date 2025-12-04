@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "name": "Google",
+      "url": "https://www.google.com",
+      "method": "GET",
+      "expected_status": 200
+    },
+    {
+      "name": "Ejemplo API",
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "method": "GET",
+      "expected_status": 200
+    }
+  ],
+  "check_interval_seconds": 60,
+  "timeout_seconds": 10
+}
