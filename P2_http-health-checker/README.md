@@ -23,10 +23,8 @@ El archivo `config.json` contiene:
 2. Ajusta `config.json` según tus necesidades.
 3. Ejecuta: `./health-checker`
 
-## Ejecutar como servicio
-Puedes crear un servicio systemd para ejecutar el verificador en segundo plano.
 
 ## Mejoras futuras
-- Implementar notificaciones por email, Slack o Telegram.
+- Implementar notificaciones por email
 - Añadir métricas para exportar a Prometheus.
 - Crear un dashboard web sencillo con el estado de los servicios.
