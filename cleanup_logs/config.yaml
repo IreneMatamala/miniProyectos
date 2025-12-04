@@ -1,0 +1,4 @@
+log_directory: /var/log/myapp
+days_to_keep: 30
+max_size_mb: 100
+log_file: /var/log/cleanup_logs.log
