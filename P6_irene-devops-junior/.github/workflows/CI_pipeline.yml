@@ -1,6 +1,6 @@
 name: CI Pipeline for Junior DevOps
 
-on: [push, pull_request]
+on: [main]
 
 jobs:
   test:
