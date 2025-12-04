@@ -2,11 +2,9 @@
 
 Este proyecto demuestra cómo usar Network Policies para aislar tráfico entre pods en un clúster de Kubernetes. Se crean dos aplicaciones (frontend y backend) y se restringe el tráfico para que solo el frontend pueda comunicarse con el backend.
 
-## Objetivo
-Mostrar el uso de Network Policies para mejorar la seguridad en un clúster Kubernetes, permitiendo solo el tráfico necesario entre servicios.
 
 ## Requisitos
-- Un clúster de Kubernetes con un CNI que soporte Network Policies (Calico, Cilium, etc.)
+- Un clúster de Kubernetes con un CNI que soporte Network Policies
 - kubectl configurado para acceder al clúster.
 
 ## Pasos
@@ -18,8 +16,3 @@ Mostrar el uso de Network Policies para mejorar la seguridad en un clúster Kube
 ## Verificación
 - Ejecutar `kubectl exec` en el pod de frontend para probar conectividad con el backend (debería funcionar).
 - Ejecutar `kubectl exec` en el pod de prueba para intentar conectar al backend (debería fallar).
-
-## Mejoras futuras
-- Añadir políticas que limiten el tráfico de salida.
-- Utilizar etiquetas más complejas para seleccionar pods.
-- Probar con diferentes CNIs.
