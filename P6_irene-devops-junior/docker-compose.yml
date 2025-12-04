@@ -28,7 +28,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
   
-  # Nginx como proxy/reverse proxy (opcional)
+  # Nginx como proxy
   nginx:
     image: nginx:alpine
     ports:
