@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-Script SIMPLE de backup que demuestra:
-- Manejo de archivos
-- Uso de fechas
-- Logging básico
-"""
+
 import os
 import shutil
 import datetime
